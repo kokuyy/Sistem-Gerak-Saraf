@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f6f7f2">
+  <meta name="description" content="Jelajahi cara sistem saraf dan sistem gerak bekerja sama melalui materi visual, simulasi gerak, aktivitas proyek, dan kuis IPAS kelas X.">
+  <title>Digital Human Body Explorer | IPAS Kelas X</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar" aria-label="Navigasi utama">
+      <a class="brand" href="#beranda" aria-label="Digital Human Body Explorer, kembali ke beranda">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 40 40" fill="none">
+            <path d="M20 5v30M9 12l11 8 11-8M9 28l11-8 11 8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="20" cy="20" r="3.3" fill="currentColor"/>
+            <circle cx="9" cy="12" r="2.5" fill="currentColor"/>
+            <circle cx="31" cy="12" r="2.5" fill="currentColor"/>
+            <circle cx="9" cy="28" r="2.5" fill="currentColor"/>
+            <circle cx="31" cy="28" r="2.5" fill="currentColor"/>
+          </svg>
+        </span>
+        <span class="brand-copy">
+          <strong>Human Body</strong>
+          <small>EXPLORER · IPAS</small>
+        </span>
+      </a>
+
+      <div class="nav-caption">RUANG BELAJAR</div>
+      <nav class="main-nav">
+        <a class="nav-link is-active" href="#beranda">
+          <span class="nav-icon" aria-hidden="true">⌂</span><span>Beranda</span>
+        </a>
+        <a class="nav-link" href="#sistem-saraf">
+          <span class="nav-icon" aria-hidden="true">◉</span><span>Sistem saraf</span>
+        </a>
+        <a class="nav-link" href="#sistem-gerak">
+          <span class="nav-icon" aria-hidden="true">✳</span><span>Sistem gerak</span>
+        </a>
+        <a class="nav-link" href="#kolaborasi">
+          <span class="nav-icon" aria-hidden="true">⌁</span><span>Kolaborasi sistem</span>
+        </a>
+        <a class="nav-link" href="#aktivitas">
+          <span class="nav-icon" aria-hidden="true">▤</span><span>Lembar aktivitas</span>
+        </a>
+        <a class="nav-link" href="#kuis">
+          <span class="nav-icon" aria-hidden="true">✎</span><span>Kuis pemahaman</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="sidebar-note">
+          <span class="note-spark" aria-hidden="true">✦</span>
+          <p>Belajar dengan rasa ingin tahu. Bergerak dengan memahami.</p>
+        </div>
+        <div class="school-label">
+          <span class="school-dot" aria-hidden="true"></span>
+          <span>SMK Raden Umar Said Kudus<br><strong>10 PPLG · IPAS</strong></span>
+        </div>
+      </div>
+    </aside>
+
+    <button class="mobile-backdrop" id="mobile-backdrop" aria-label="Tutup menu" hidden></button>
+
+    <main class="main-content">
+      <header class="topbar">
+        <button class="menu-toggle" id="menu-toggle" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="sidebar">
+          <span></span><span></span><span></span>
+        </button>
+        <div class="breadcrumb"><span>IPAS</span><span class="breadcrumb-separator">/</span><strong>Sistem saraf &amp; gerak</strong></div>
+        <a class="topbar-tag" href="#aktivitas"><span aria-hidden="true">✦</span> Proyek PjBL</a>
+      </header>
+
+      <div class="page-wrap">
+        <section class="hero-section" id="beranda">
+          <div class="hero-copy">
+            <div class="eyebrow"><span class="eyebrow-dot"></span> DIGITAL HUMAN BODY EXPLORER</div>
+            <h1>Satu tubuh.<br>Dua sistem.<br><span>Gerak luar biasa.</span></h1>
+            <p class="hero-description">Pernah bertanya bagaimana otak membuat tanganmu bergerak — atau kenapa tangan langsung menjauh saat menyentuh benda panas? Yuk, jelajahi jawabannya.</p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#sistem-saraf">Mulai menjelajah <span aria-hidden="true">→</span></a>
+              <a class="text-link" href="#kolaborasi">Lihat simulasi gerak <span aria-hidden="true">↗</span></a>
+            </div>
+            <div class="hero-meta">
+              <span><span class="meta-icon" aria-hidden="true">◷</span> 1 pertemuan · 3 JP</span>
+              <span class="meta-divider" aria-hidden="true"></span>
+              <span>Materi IPAS kelas X PPLG</span>
+            </div>
+          </div>
+          <div class="hero-art" aria-label="Ilustrasi hubungan otak, saraf, dan gerak">
+            <div class="art-orbit orbit-one"></div>
+            <div class="art-orbit orbit-two"></div>
+            <div class="art-sun"><span>✦</span></div>
+            <div class="art-label label-brain"><span class="label-dot dot-violet"></span> OTAK</div>
+            <div class="art-label label-muscle"><span class="label-dot dot-coral"></span> OTOT</div>
+            <div class="art-label label-nerve"><span class="label-dot dot-mint"></span> SARAF</div>
+            <svg class="body-illustration" viewBox="0 0 360 390" role="img" aria-labelledby="body-title">
+              <title id="body-title">Ilustrasi jalur saraf dari otak ke tubuh</title>
+              <defs>
+                <linearGradient id="bodyFill" x1="180" y1="70" x2="180" y2="360" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#D9E7D8"/>
+                  <stop offset="1" stop-color="#B9D2C0"/>
+                </linearGradient>
+              </defs>
+              <circle cx="180" cy="54" r="35" fill="#F0CDB5"/>
+              <path d="M146 54c0-22 14-37 34-37s34 15 34 37c0 11-5 20-12 27h-44c-7-7-12-16-12-27Z" fill="#B7A7D7"/>
+              <path d="M166 78h28v26h-28z" fill="#E5B99D"/>
+              <path d="M122 110c13-12 29-17 58-17s45 5 58 17l23 32-19 13-21-26 8 83h-98l8-83-21 26-19-13 23-32Z" fill="url(#bodyFill)"/>
+              <path d="M143 200h74l12 69-22 5-27-50-27 50-22-5 12-69Z" fill="#AFC9B5"/>
+              <path d="m140 273-4 77c0 9 8 14 17 10l14-7 8-91-35 11Zm80 0 4 77c0 9-8 14-17 10l-14-7-8-91 35 11Z" fill="#AFC9B5"/>
+              <path d="m180 91-1 35m1-24-25 23m25-23 25 23m-25 2v73m0-45-24 34m24-34 25 34m-25 11-17 29m17-29 17 29" stroke="#607D69" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M164 51c4-8 12-12 19-9 5-8 18-4 19 5 8 5 5 16-2 19h-32c-9-3-11-11-4-15Z" fill="#8A76B7"/>
+              <circle cx="180" cy="123" r="5" fill="#F4A083"/>
+              <circle cx="155" cy="125" r="4" fill="#68A993"/>
+              <circle cx="205" cy="125" r="4" fill="#68A993"/>
+              <circle cx="156" cy="159" r="4" fill="#68A993"/>
+              <circle cx="204" cy="159" r="4" fill="#68A993"/>
+              <circle cx="163" cy="218" r="4" fill="#F4A083"/>
+              <circle cx="197" cy="218" r="4" fill="#F4A083"/>
+            </svg>
+            <div class="art-caption"><span class="caption-pulse"></span> Sistem yang saling terhubung</div>
+          </div>
+          <div class="hero-bottom">
+            <span class="scroll-hint"><span class="scroll-line"></span> GULIR UNTUK MENJELAJAH</span>
+            <span class="hero-index">01 <span>/</span> 06</span>
+          </div>
+        </section>
+
+        <section class="intro-section section-block" aria-labelledby="intro-title">
+          <div class="section-heading">
+            <div><span class="section-kicker">PETA BELAJAR</span><h2 id="intro-title">Apa yang akan kamu kuasai?</h2></div>
+            <p>Pelajari bagian tubuh, ikuti alur impuls, lalu buktikan pemahamanmu.</p>
+          </div>
+          <div class="learning-grid">
+            <article class="learning-card">
+              <span class="card-number">01</span><span class="learning-icon icon-lilac" aria-hidden="true">◉</span>
+              <h3>Kenali sistem saraf</h3><p>Identifikasi otak, sumsum tulang belakang, dan saraf tepi beserta fungsinya.</p>
+              <a href="#sistem-saraf" aria-label="Pelajari sistem saraf">Pelajari <span aria-hidden="true">↗</span></a>
+            </article>
+            <article class="learning-card">
+              <span class="card-number">02</span><span class="learning-icon icon-peach" aria-hidden="true">✳</span>
+              <h3>Pahami sistem gerak</h3><p>Jelajahi kerja sama tulang, sendi, dan otot untuk menghasilkan gerakan.</p>
+              <a href="#sistem-gerak" aria-label="Pelajari sistem gerak">Pelajari <span aria-hidden="true">↗</span></a>
+            </article>
+            <article class="learning-card">
+              <span class="card-number">03</span><span class="learning-icon icon-mint" aria-hidden="true">⌁</span>
+              <h3>Hubungkan keduanya</h3><p>Bandingkan respons gerak sadar dengan gerak refleks melalui simulasi.</p>
+              <a href="#kolaborasi" aria-label="Jelajahi simulasi gerak">Jelajahi <span aria-hidden="true">↗</span></a>
+            </article>
+          </div>
+          <div class="objective-strip">
+            <span class="objective-icon" aria-hidden="true">◎</span>
+            <div><strong>Tujuan pembelajaran</strong><p>Menganalisis hubungan rangsangan, sistem saraf, dan respons gerak; membedakan gerak sadar dan refleks; serta merancang media edukasi digital dengan logika dan desain antarmuka.</p></div>
+          </div>
+        </section>
+
+        <section class="content-section section-block" id="sistem-saraf" aria-labelledby="nervous-title">
+          <div class="section-heading">
+            <div><span class="section-kicker">01 · PUSAT KENDALI</span><h2 id="nervous-title">Sistem saraf manusia</h2></div>
+            <p>Sistem yang menerima rangsangan, mengolah informasi, lalu mengirimkan perintah ke seluruh tubuh.</p>
+          </div>
+          <div class="feature-layout">
+            <div class="feature-visual nervous-visual">
+              <div class="visual-topline"><span>JARINGAN KOMUNIKASI TUBUH</span><span class="live-indicator"><i></i> AKTIF</span></div>
+              <div class="nervous-diagram" aria-label="Diagram sederhana sistem saraf pusat dan saraf tepi">
+                <div class="brain-node"><span aria-hidden="true">✺</span><strong>Otak</strong><small>pusat pengolah</small></div>
+                <div class="diagram-spine"><span></span><span></span><span></span><span></span><span></span></div>
+                <div class="nerve-lines" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+                <div class="nerve-node nerve-left"><span></span><small>Saraf tepi</small></div>
+                <div class="nerve-node nerve-right"><span></span><small>Saraf tepi</small></div>
+                <div class="spine-label">Sumsum tulang belakang</div>
+                <div class="diagram-foot"><span>RESEPTOR</span><span class="foot-dash"></span><span>IMPULS SARAF</span><span class="foot-dash"></span><span>RESPONS</span></div>
+              </div>
+            </div>
+            <div class="component-list">
+              <article class="component-item">
+                <div class="component-icon icon-lilac" aria-hidden="true">✺</div><div><h3>Otak</h3><p>Pusat pengolahan informasi dan koordinasi tubuh. Otak membantu kita memahami rangsangan dan merencanakan gerakan sadar.</p><span class="component-tag">PUSAT PENGOLAH INFORMASI</span></div>
+              </article>
+              <article class="component-item">
+                <div class="component-icon icon-blue" aria-hidden="true">↕</div><div><h3>Sumsum tulang belakang</h3><p>Menghantarkan impuls antara otak dan tubuh serta menjadi pusat pemrosesan pada refleks tertentu.</p><span class="component-tag">JALUR IMPULS · PUSAT REFLEKS</span></div>
+              </article>
+              <article class="component-item">
+                <div class="component-icon icon-mint" aria-hidden="true">⌁</div><div><h3>Saraf tepi</h3><p>Menghubungkan sistem saraf pusat dengan reseptor dan bagian tubuh, termasuk otot sebagai efektor.</p><span class="component-tag">PENGHUBUNG TUBUH</span></div>
+              </article>
+            </div>
+          </div>
+          <div class="fact-banner"><span aria-hidden="true">✦</span><p><strong>Ingat alurnya:</strong> reseptor menerima rangsangan → informasi berjalan melalui saraf → sistem saraf mengolahnya → efektor menghasilkan respons.</p></div>
+        </section>
+
+        <section class="content-section section-block movement-section" id="sistem-gerak" aria-labelledby="movement-title">
+          <div class="section-heading">
+            <div><span class="section-kicker">02 · MESIN PERGERAKAN</span><h2 id="movement-title">Sistem gerak manusia</h2></div>
+            <p>Gerakan terjadi karena rangka, persendian, dan otot bekerja sebagai satu tim.</p>
+          </div>
+          <div class="movement-grid">
+            <article class="movement-card bone-card">
+              <div class="movement-card-top"><span class="movement-symbol" aria-hidden="true">╱╲</span><span class="movement-count">01 / 03</span></div>
+              <span class="movement-label">RANGKA</span><h3>Tulang</h3>
+              <p>Menopang tubuh dan melindungi organ. Tulang juga menjadi tempat melekatnya otot.</p>
+              <div class="movement-example"><span class="example-dot"></span> Contoh: tulang tengkorak melindungi otak.</div>
+              <div class="bone-art" aria-hidden="true"><span></span><span></span><i></i></div>
+            </article>
+            <article class="movement-card joint-card">
+              <div class="movement-card-top"><span class="movement-symbol" aria-hidden="true">⌁</span><span class="movement-count">02 / 03</span></div>
+              <span class="movement-label">PENGHUBUNG</span><h3>Sendi</h3>
+              <p>Menghubungkan tulang dan memungkinkan arah gerak tertentu pada tubuh.</p>
+              <div class="movement-example"><span class="example-dot"></span> Contoh: sendi siku membantu lengan menekuk.</div>
+              <div class="joint-art" aria-hidden="true"><span></span><i></i><b></b></div>
+            </article>
+            <article class="movement-card muscle-card">
+              <div class="movement-card-top"><span class="movement-symbol" aria-hidden="true">∿</span><span class="movement-count">03 / 03</span></div>
+              <span class="movement-label">PENGGERAK AKTIF</span><h3>Otot</h3>
+              <p>Berkontraksi dan relaksasi untuk menarik tulang sehingga gerakan terjadi.</p>
+              <div class="movement-example"><span class="example-dot"></span> Contoh: otot lengan bekerja saat mengangkat buku.</div>
+              <div class="muscle-art" aria-hidden="true"><span></span><span></span><i></i></div>
+            </article>
+          </div>
+          <div class="movement-note"><span class="note-check" aria-hidden="true">✓</span><span><strong>Kerja sama adalah kunci.</strong> Tulang memberi penopang, sendi menjadi titik gerak, dan otot menggerakkan tulang melalui kontraksi serta relaksasi.</span></div>
+        </section>
+
+        <section class="content-section section-block collaboration-section" id="kolaborasi" aria-labelledby="collaboration-title">
+          <div class="section-heading">
+            <div><span class="section-kicker">03 · DARI RANGSANGAN KE GERAKAN</span><h2 id="collaboration-title">Satu sinyal, satu respons</h2></div>
+            <p>Pilih jenis gerak dan ikuti perjalanan informasinya. Perhatikan perbedaan jalurnya!</p>
+          </div>
+          <div class="simulation-panel">
+            <div class="simulation-header">
+              <div><span class="simulation-label">SIMULASI INTERAKTIF</span><h3 id="simulation-heading">Apa yang terjadi saat kamu mengambil buku?</h3></div>
+              <div class="simulation-switch" role="group" aria-label="Pilih jenis gerak">
+                <button class="mode-button is-selected" type="button" data-mode="sadar" aria-pressed="true">Gerak sadar</button>
+                <button class="mode-button" type="button" data-mode="refleks" aria-pressed="false">Gerak refleks</button>
+              </div>
+            </div>
+            <div class="scenario-row">
+              <span class="scenario-icon" id="scenario-icon" aria-hidden="true">📖</span>
+              <p id="scenario-description">Kamu melihat buku di meja dan memutuskan untuk mengambilnya.</p>
+              <span class="scenario-type" id="scenario-type">DISENGAJA</span>
+            </div>
+            <div class="pathway" id="pathway" aria-label="Tahapan jalur gerak sadar">
+              <article class="path-step" data-step="rangsangan"><span class="step-index">01</span><span class="step-icon" aria-hidden="true">◉</span><h4>Rangsangan</h4><p>Mata melihat buku.</p></article>
+              <span class="path-connector" aria-hidden="true">→</span>
+              <article class="path-step" data-step="reseptor"><span class="step-index">02</span><span class="step-icon" aria-hidden="true">◎</span><h4>Reseptor</h4><p>Reseptor penglihatan menerima informasi.</p></article>
+              <span class="path-connector" aria-hidden="true">→</span>
+              <article class="path-step" data-step="pusat"><span class="step-index">03</span><span class="step-icon" aria-hidden="true">✺</span><h4>Sistem saraf pusat</h4><p>Informasi diolah oleh otak.</p></article>
+              <span class="path-connector" aria-hidden="true">→</span>
+              <article class="path-step" data-step="efektor"><span class="step-index">04</span><span class="step-icon" aria-hidden="true">∿</span><h4>Efektor</h4><p>Otot lengan menerima perintah.</p></article>
+              <span class="path-connector" aria-hidden="true">→</span>
+              <article class="path-step" data-step="respons"><span class="step-index">05</span><span class="step-icon" aria-hidden="true">↗</span><h4>Respons</h4><p>Tangan bergerak mengambil buku.</p></article>
+            </div>
+            <div class="simulation-explainer"><span class="explainer-mark" aria-hidden="true">i</span><p id="simulation-explanation"><strong>Gerak sadar</strong> direncanakan dan diolah oleh otak sebelum perintah dikirim ke otot.</p></div>
+          </div>
+          <div class="safety-note"><span class="safety-icon" aria-hidden="true">!</span><p><strong>Belajar dengan aman:</strong> contoh benda panas hanya untuk ilustrasi atau simulasi. Jangan mencoba menyentuh benda panas atau melakukan tindakan berisiko.</p></div>
+        </section>
+
+        <section class="project-banner section-block" aria-labelledby="project-title">
+          <div class="project-symbol" aria-hidden="true"><span>✦</span><i></i><b></b></div>
+          <div class="project-copy"><span class="section-kicker">TANTANGAN PROYEK RPL</span><h2 id="project-title">Buat ilmu biologi jadi pengalaman digital.</h2><p>Rancang media yang membantu teman memahami hubungan sistem saraf dan gerak manusia melalui visual, simulasi, dan interaksi.</p></div>
+          <a class="button button-light" href="#aktivitas">Rancang proyekmu <span aria-hidden="true">→</span></a>
+        </section>
+
+        <section class="content-section section-block activity-section" id="aktivitas" aria-labelledby="activity-title">
+          <div class="section-heading">
+            <div><span class="section-kicker">SAATNYA MENCOBA</span><h2 id="activity-title">Lembar aktivitas proyek</h2></div>
+            <p>Isi lembar kerja secara mandiri atau bersama kelompok. Isian tersimpan otomatis di perangkat ini.</p>
+          </div>
+          <div class="activity-tabs" role="tablist" aria-label="Pilih aktivitas">
+            <button class="activity-tab is-active" type="button" role="tab" id="tab-konsep" aria-selected="true" aria-controls="panel-konsep" data-tab="konsep"><span>01</span> Analisis konsep</button>
+            <button class="activity-tab" type="button" role="tab" id="tab-alur" aria-selected="false" aria-controls="panel-alur" data-tab="alur" tabindex="-1"><span>02</span> Analisis alur gerak</button>
+            <button class="activity-tab" type="button" role="tab" id="tab-rancangan" aria-selected="false" aria-controls="panel-rancangan" data-tab="rancangan" tabindex="-1"><span>03</span> Rancangan produk</button>
+            <button class="activity-tab" type="button" role="tab" id="tab-refleksi" aria-selected="false" aria-controls="panel-refleksi" data-tab="refleksi" tabindex="-1"><span>04</span> Refleksi individu</button>
+          </div>
+
+          <form id="worksheet-form">
+            <div class="identity-fields">
+              <div class="identity-heading"><span class="panel-eyebrow">IDENTITAS PESERTA DIDIK</span><p>Isi sebelum mengerjakan aktivitas, sendiri atau bersama kelompok.</p></div>
+              <label class="answer-field"><span>Nama peserta didik / ketua kelompok</span><input type="text" name="student-name" placeholder="Tuliskan nama lengkap"></label>
+              <label class="answer-field"><span>Nama anggota kelompok</span><input type="text" name="student-group" placeholder="Tuliskan nama anggota kelompok"></label>
+              <label class="answer-field"><span>Kelas / program keahlian</span><input type="text" name="student-class" value="10 PPLG"></label>
+            </div>
+            <div class="activity-panel is-active" role="tabpanel" id="panel-konsep" aria-labelledby="tab-konsep" data-panel="konsep">
+              <div class="panel-heading"><div><span class="panel-eyebrow">AKTIVITAS 1</span><h3>Analisis konsep</h3></div><p>Lengkapi tabel berdasarkan diskusi dan sumber belajar tepercaya.</p></div>
+              <div class="table-wrap">
+                <table class="concept-table">
+                  <thead><tr><th>Komponen</th><th>Fungsi utama</th><th>Contoh dalam kehidupan</th></tr></thead>
+                  <tbody>
+                    <tr><th scope="row"><span class="table-dot dot-violet"></span>Otak</th><td><textarea name="concept-brain-function" aria-label="Fungsi otak" placeholder="Tuliskan fungsi utama..."></textarea></td><td><textarea name="concept-brain-example" aria-label="Contoh fungsi otak" placeholder="Tuliskan contoh..."></textarea></td></tr>
+                    <tr><th scope="row"><span class="table-dot dot-blue"></span>Sumsum tulang belakang</th><td><textarea name="concept-spine-function" aria-label="Fungsi sumsum tulang belakang" placeholder="Tuliskan fungsi utama..."></textarea></td><td><textarea name="concept-spine-example" aria-label="Contoh fungsi sumsum tulang belakang" placeholder="Tuliskan contoh..."></textarea></td></tr>
+                    <tr><th scope="row"><span class="table-dot dot-mint"></span>Saraf tepi</th><td><textarea name="concept-nerve-function" aria-label="Fungsi saraf tepi" placeholder="Tuliskan fungsi utama..."></textarea></td><td><textarea name="concept-nerve-example" aria-label="Contoh fungsi saraf tepi" placeholder="Tuliskan contoh..."></textarea></td></tr>
+                    <tr><th scope="row"><span class="table-dot dot-coral"></span>Tulang</th><td><textarea name="concept-bone-function" aria-label="Fungsi tulang" placeholder="Tuliskan fungsi utama..."></textarea></td><td><textarea name="concept-bone-example" aria-label="Contoh fungsi tulang" placeholder="Tuliskan contoh..."></textarea></td></tr>
+                    <tr><th scope="row"><span class="table-dot dot-yellow"></span>Sendi</th><td><textarea name="concept-joint-function" aria-label="Fungsi sendi" placeholder="Tuliskan fungsi utama..."></textarea></td><td><textarea name="concept-joint-example" aria-label="Contoh fungsi sendi" placeholder="Tuliskan contoh..."></textarea></td></tr>
+                    <tr><th scope="row"><span class="table-dot dot-peach"></span>Otot</th><td><textarea name="concept-muscle-function" aria-label="Fungsi otot" placeholder="Tuliskan fungsi utama..."></textarea></td><td><textarea name="concept-muscle-example" aria-label="Contoh fungsi otot" placeholder="Tuliskan contoh..."></textarea></td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="activity-panel" role="tabpanel" id="panel-alur" aria-labelledby="tab-alur" data-panel="alur" hidden>
+              <div class="panel-heading"><div><span class="panel-eyebrow">AKTIVITAS 2</span><h3>Analisis alur gerak</h3></div><p>Pilih satu peristiwa, lalu uraikan perjalanan rangsangan sampai respons.</p></div>
+              <div class="safety-inline"><span aria-hidden="true">!</span> Gunakan ilustrasi atau simulasi aman. Jangan melakukan percobaan dengan benda panas.</div>
+              <label class="field-label" for="event-select">Peristiwa yang diamati</label>
+              <select class="select-field" id="event-select" name="event">
+                <option value="book">Mengambil buku (gerak sadar)</option>
+                <option value="hot">Menarik tangan dari benda panas (ilustrasi refleks — jangan dicoba)</option>
+                <option value="custom">Peristiwa pilihan sendiri</option>
+              </select>
+              <label class="answer-field custom-event-field" id="custom-event-wrap" for="custom-event" hidden><span>Peristiwa pilihanmu</span><input id="custom-event" type="text" name="event-custom" placeholder="Tuliskan peristiwa yang kamu amati"></label>
+              <div class="answer-grid">
+                <label class="answer-field"><span>Rangsangan yang diterima</span><textarea name="event-stimulus" placeholder="Apa yang memicu respons?"></textarea></label>
+                <label class="answer-field"><span>Organ atau reseptor yang terlibat</span><textarea name="event-receptor" placeholder="Reseptor apa yang menerima rangsangan?"></textarea></label>
+                <label class="answer-field"><span>Jalur informasi saraf</span><textarea name="event-pathway" placeholder="Uraikan jalur informasi saraf..."></textarea></label>
+                <label class="answer-field"><span>Respons atau gerakan yang dihasilkan</span><textarea name="event-response" placeholder="Apa respons tubuh?"></textarea></label>
+                <label class="answer-field answer-field-wide"><span>Termasuk gerak sadar atau refleks? Jelaskan.</span><textarea name="event-reason" placeholder="Sebutkan jenis gerak dan alasanmu..."></textarea></label>
+              </div>
+            </div>
+
+            <div class="activity-panel" role="tabpanel" id="panel-rancangan" aria-labelledby="tab-rancangan" data-panel="rancangan" hidden>
+              <div class="panel-heading"><div><span class="panel-eyebrow">AKTIVITAS 3 &amp; 4</span><h3>Rancang produk digitalmu</h3></div><p>Susun ide dan gambarkan wireframe halaman utama sebelum mulai membuat produk.</p></div>
+              <div class="project-prompts"><strong>Pertanyaan pemantik</strong><span>Mengapa tangan dapat bergerak ketika otak memberikan perintah?</span><span>Mengapa tubuh dapat merespons rangsangan tertentu secara refleks?</span><span>Bagaimana media digital dapat menjelaskan proses tersebut dengan mudah?</span></div>
+              <div class="answer-grid">
+                <label class="answer-field"><span>Nama produk</span><input type="text" name="project-name" placeholder="Contoh: Gerak! — Human Body Explorer"></label>
+                <label class="answer-field"><span>Target pengguna</span><input type="text" name="project-audience" placeholder="Contoh: siswa kelas X"></label>
+                <label class="answer-field answer-field-wide"><span>Masalah yang ingin diselesaikan</span><textarea name="project-problem" placeholder="Bagaimana media digital membantu teman memahami materi?"></textarea></label>
+                <label class="answer-field"><span>Format produk</span><select name="project-format"><option value="">Pilih format</option><option>Website edukasi interaktif (HTML, CSS, JavaScript)</option><option>Prototype aplikasi edukasi (Figma)</option><option>Lainnya</option></select></label>
+                <label class="answer-field"><span>Teknologi yang digunakan</span><input type="text" name="project-technology" placeholder="Contoh: HTML, CSS, dan JavaScript"></label>
+                <label class="answer-field answer-field-wide"><span>Fitur utama dan pembagian peran</span><textarea name="project-features" placeholder="Materi, diagram alur, kuis, navigasi; peneliti, UI designer, programmer, penguji..."></textarea></label>
+                <label class="answer-field answer-field-wide"><span>Sketsa halaman utama / wireframe</span><textarea class="wireframe-field" name="project-wireframe" placeholder="Deskripsikan letak judul, menu navigasi, ilustrasi, ringkasan materi, dan tombol."></textarea></label>
+              </div>
+              <div class="pjbl-steps"><strong>Alur kerja PjBL</strong><span>01 · Rumuskan pertanyaan</span><span>02 · Buat wireframe &amp; bagi peran</span><span>03 · Kembangkan dan uji produk</span></div>
+            </div>
+
+            <div class="activity-panel" role="tabpanel" id="panel-refleksi" aria-labelledby="tab-refleksi" data-panel="refleksi" hidden>
+              <div class="panel-heading"><div><span class="panel-eyebrow">REFLEKSI INDIVIDU</span><h3>Berhenti sejenak, lalu refleksikan</h3></div><p>Tidak ada jawaban benar atau salah. Ceritakan proses belajarmu dengan jujur.</p></div>
+              <div class="reflection-list">
+                <label class="answer-field"><span><i>01</i> Apa konsep sistem saraf dan gerak yang paling saya pahami?</span><textarea name="reflection-concept" placeholder="Tuliskan pemahamanmu..."></textarea></label>
+                <label class="answer-field"><span><i>02</i> Apa hubungan materi ini dengan kehidupan sehari-hari?</span><textarea name="reflection-life" placeholder="Tuliskan hubungan yang kamu temukan..."></textarea></label>
+                <label class="answer-field"><span><i>03</i> Keterampilan PPLG apa yang saya gunakan dalam proyek?</span><textarea name="reflection-skill" placeholder="Contoh: logika, UI/UX, pemrograman, kolaborasi..."></textarea></label>
+                <label class="answer-field"><span><i>04</i> Masalah apa yang muncul dan bagaimana cara mengatasinya?</span><textarea name="reflection-challenge" placeholder="Ceritakan tantangan dan solusi..."></textarea></label>
+                <label class="answer-field"><span><i>05</i> Jika proyek dikembangkan lagi, fitur apa yang ingin saya tambahkan?</span><textarea name="reflection-next" placeholder="Tuliskan ide pengembanganmu..."></textarea></label>
+              </div>
+            </div>
+            <div class="worksheet-actions">
+              <span class="save-status" id="save-status" aria-live="polite"><span class="save-dot"></span> Isian tersimpan otomatis</span>
+              <div><button class="button button-outline" id="export-worksheet" type="button">Unduh jawaban <span aria-hidden="true">↓</span></button><button class="button button-primary" id="print-worksheet" type="button">Cetak lembar kerja <span aria-hidden="true">↗</span></button></div>
+            </div>
+          </form>
+        </section>
+
+        <section class="quiz-section section-block" id="kuis" aria-labelledby="quiz-title">
+          <div class="quiz-intro">
+            <div><span class="section-kicker">CEK PEMAHAMAN</span><h2 id="quiz-title">Siap uji ingatanmu?</h2><p>Jawab lima pertanyaan singkat tentang sistem saraf dan gerak. Pilih jawaban terbaikmu!</p></div>
+            <div class="quiz-badge"><span aria-hidden="true">✎</span><strong>5</strong><small>PERTANYAAN</small></div>
+          </div>
+          <form id="quiz-form">
+            <fieldset class="quiz-question" data-question="q1">
+              <legend><span class="question-number">01</span> Bagian sistem saraf yang menjadi pusat pengolahan informasi adalah...</legend>
+              <label class="quiz-option"><input type="radio" name="q1" value="a"><span class="option-letter">A</span><span>Saraf tepi</span></label>
+              <label class="quiz-option"><input type="radio" name="q1" value="b"><span class="option-letter">B</span><span>Otak</span></label>
+              <label class="quiz-option"><input type="radio" name="q1" value="c"><span class="option-letter">C</span><span>Otot</span></label>
+              <p class="answer-feedback" aria-live="polite"></p>
+            </fieldset>
+            <fieldset class="quiz-question" data-question="q2">
+              <legend><span class="question-number">02</span> Komponen sistem gerak yang menghubungkan tulang dan memungkinkan gerakan adalah...</legend>
+              <label class="quiz-option"><input type="radio" name="q2" value="a"><span class="option-letter">A</span><span>Reseptor</span></label>
+              <label class="quiz-option"><input type="radio" name="q2" value="b"><span class="option-letter">B</span><span>Sumsum tulang belakang</span></label>
+              <label class="quiz-option"><input type="radio" name="q2" value="c"><span class="option-letter">C</span><span>Sendi</span></label>
+              <p class="answer-feedback" aria-live="polite"></p>
+            </fieldset>
+            <fieldset class="quiz-question" data-question="q3">
+              <legend><span class="question-number">03</span> Pada gerak sadar saat mengambil buku, informasi diolah terlebih dahulu oleh...</legend>
+              <label class="quiz-option"><input type="radio" name="q3" value="a"><span class="option-letter">A</span><span>Otak</span></label>
+              <label class="quiz-option"><input type="radio" name="q3" value="b"><span class="option-letter">B</span><span>Otot lengan</span></label>
+              <label class="quiz-option"><input type="radio" name="q3" value="c"><span class="option-letter">C</span><span>Tulang</span></label>
+              <p class="answer-feedback" aria-live="polite"></p>
+            </fieldset>
+            <fieldset class="quiz-question" data-question="q4">
+              <legend><span class="question-number">04</span> Pada refleks tertentu, bagian yang dapat memproses respons dengan cepat adalah...</legend>
+              <label class="quiz-option"><input type="radio" name="q4" value="a"><span class="option-letter">A</span><span>Sendi</span></label>
+              <label class="quiz-option"><input type="radio" name="q4" value="b"><span class="option-letter">B</span><span>Sumsum tulang belakang</span></label>
+              <label class="quiz-option"><input type="radio" name="q4" value="c"><span class="option-letter">C</span><span>Tulang tengkorak</span></label>
+              <p class="answer-feedback" aria-live="polite"></p>
+            </fieldset>
+            <fieldset class="quiz-question" data-question="q5">
+              <legend><span class="question-number">05</span> Otot menghasilkan gerakan dengan cara...</legend>
+              <label class="quiz-option"><input type="radio" name="q5" value="a"><span class="option-letter">A</span><span>Menerima cahaya dan mengubahnya menjadi impuls</span></label>
+              <label class="quiz-option"><input type="radio" name="q5" value="b"><span class="option-letter">B</span><span>Menyambungkan dua tulang tanpa bergerak</span></label>
+              <label class="quiz-option"><input type="radio" name="q5" value="c"><span class="option-letter">C</span><span>Berkontraksi dan relaksasi</span></label>
+              <p class="answer-feedback" aria-live="polite"></p>
+            </fieldset>
+            <div class="quiz-actions"><p id="quiz-message" aria-live="polite">Pilih satu jawaban pada setiap pertanyaan.</p><div><button class="button button-outline" id="reset-quiz" type="reset">Ulangi</button><button class="button button-primary" type="submit">Periksa jawaban <span aria-hidden="true">→</span></button></div></div>
+            <div class="quiz-result" id="quiz-result" role="status" hidden></div>
+          </form>
+        </section>
+
+        <section class="closing-section">
+          <div class="closing-star" aria-hidden="true">✦</div>
+          <p class="section-kicker">KAMU SUDAH MENJELAJAH</p>
+          <h2>Rasa ingin tahu adalah<br><span>awal dari setiap penemuan.</span></h2>
+          <a href="#beranda" class="back-to-top">Kembali ke atas <span aria-hidden="true">↑</span></a>
+        </section>
+        <footer class="site-footer"><span>Digital Human Body Explorer</span><span>Media pembelajaran IPAS · Kelas X PPLG</span><span>Dibuat untuk belajar bersama <span aria-hidden="true">✦</span></span></footer>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
